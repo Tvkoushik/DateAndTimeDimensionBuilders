@@ -342,7 +342,7 @@ class DateRecord(object):
         Returns a list representation of the record.
         """
         return [getattr(self, value) for value in dir(self)
-                if value not in ("to_list", "columns") and value[0] is not "_"]
+                if value not in ("to_list", "columns") and value[0] != "_"]
 
     @staticmethod
     def columns():
@@ -350,7 +350,7 @@ class DateRecord(object):
         Returns the column names corresponding to to_list().
         """
         return [value for value in dir(DateRecord)
-                if value not in ("to_list", "columns") and value[0] is not "_"]
+                if value not in ("to_list", "columns") and value[0] != "_"]
 
 def main():
     """
